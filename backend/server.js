@@ -12,6 +12,7 @@ connectDB();
 app.use(express.json());
 app.use('/api', require('./routes/api'));
 
+fetchCryptoData();
 cron.schedule('0 */2 * * *', fetchCryptoData);
 
 const PORT = process.env.PORT || 5001;
